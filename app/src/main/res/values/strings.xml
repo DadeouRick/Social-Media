@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Social Media</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="logout">LogOut</string>
+    <string name="type_a_message">Type a Message</string>
+    <string name="type_a_comment">Type a Comment...</string>
+    <string name="comments">Comments</string>
+</resources>

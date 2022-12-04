@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PostDetailsActivity">
+
+    <ScrollView
+        android:id="@+id/nestedSV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/commentsLayout"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_4sdp"
+                app:contentPadding="@dimen/_5sdp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/white"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/profileLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/profImage"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:src="@drawable/ic_face_24"
+                            android:scaleType="centerCrop"
+                            app:riv_oval="true"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/_8sdp">
+
+                            <TextView
+                                android:id="@+id/uNameTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Name"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:id="@+id/pTimeTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="33 min"/>
+
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/moreBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_more"
+                            android:background="@null"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/pTitleTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:autoLink="all"
+                        android:textStyle="bold"
+                        android:text="Title"/>
+
+                    <TextView
+                        android:id="@+id/pDescriptionTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="The post description"
+                        android:autoLink="all"
+                        android:textColor="@color/black" />
+
+                    <ImageView
+                        android:id="@+id/pImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_240sdp"
+                        android:visibility="visible"/>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <VideoView
+                            android:id="@+id/pVideo"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_gravity="center"
+                            android:saveEnabled="false"
+                            android:layout_height="@dimen/_250sdp"/>
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/pLikesTv"
+                        android:text="1.2k likes"
+                        android:textColor="@color/primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F5F0F0"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/likeBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="0"
+                            android:drawableLeft="@drawable/ic_like_black"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:backgroundTint="#D5D4D4"
+                            app:cornerRadius="@dimen/_20sdp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/commentBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:backgroundTint="#D5D4D4"
+                            android:drawableLeft="@drawable/ic_comment"
+                            app:cornerRadius="@dimen/_20sdp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/shareBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:drawableLeft="@drawable/ic_share"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:backgroundTint="#D5D4D4"
+                            app:cornerRadius="@dimen/_20sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:text="@string/comments"
+                android:textColor="@color/black"
+                android:padding="@dimen/_2sdp"
+                android:drawablePadding="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:drawableLeftCompat="@drawable/ic_comment"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/commentRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/commentsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp"
+        android:background="@color/primary"
+        android:layout_alignParentBottom="true">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:id="@+id/cAvatarIv"
+            android:src="@drawable/ic_face_24"
+            android:scaleType="centerCrop"
+            app:riv_oval="true"/>
+
+        <EditText
+            android:id="@+id/inputComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:layout_toStartOf="@+id/sendBtn"
+            android:imeOptions="actionDone"
+            android:layout_toEndOf="@+id/cAvatarIv"
+            android:background="@drawable/background_chat_input"
+            android:hint="@string/type_a_comment"
+            android:inputType="textCapSentences|textMultiLine"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/sendBtn"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_send"
+            android:background="@drawable/send_button"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

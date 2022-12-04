@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:padding="@dimen/_15sdp"
+    android:scrollbars="none"
+    tools:context=".activities.AddPostImageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/nameTIL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pTitleET"
+                android:inputType="text"
+                android:hint="Title"
+                android:imeOptions="actionNext"
+                android:drawableStart="@drawable/ic_label"
+                android:textSize="16sp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/pImageIv"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:elevation="@dimen/_2sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:background="@drawable/background"
+            android:src="@drawable/ic_image"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_description"
+                android:drawablePadding="@dimen/_10sdp"
+                android:hint="Description"
+                android:imeOptions="actionDone"
+                android:minLines="5"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:id="@+id/pDescriptionEt"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/uploadBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="UPLOAD"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/_8sdp"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F1EDED"
+    tools:context=".activities.ChatActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/primary_dark"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginBottom="@dimen/_3sdp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/profileImg"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:src="@drawable/ic_user_default"
+                    android:scaleType="centerCrop"
+                    app:riv_oval="true"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/onlineStatusIv"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/circle_offline"
+                    app:riv_oval="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/nameTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:text="His Name"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/userStatusTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="On line"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/blockIv"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/ic_unblocked"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/chatLayout"
+        android:layout_below="@id/toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/chatLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/inputMessage"
+            android:layout_weight="1"
+            android:background="@drawable/background_chat_input"
+            android:hint="@string/type_a_message"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:padding="@dimen/_13sdp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/send"
+            android:src="@drawable/ic_send"
+            android:background="@drawable/send_button"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginHorizontal="@dimen/_2sdp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

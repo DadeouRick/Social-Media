@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentPadding="@dimen/_3sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/profileIv"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_face_24"
+                app:riv_oval="true"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/onlineStatusIv"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/circle_offline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:riv_oval="true" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_toEndOf="@id/rL"
+            android:text="His Name"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/lastMessageTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTv"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_toEndOf="@id/rL"
+            android:maxLines="2"
+            android:text="The last message" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
